@@ -4,7 +4,12 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-model = tf.keras.models.load_model('fruit_transfer_model.keras')
+@st.cache_resource
+def load_my_model():
+    # compile=False を追加することで、ロード時の余計なチェックをスキップします
+    return tf.keras.models.load_model('fruit_transfer_model.keras', compile=False)
+
+model = load_my_model()
 
 class_names = ['Apple', 'Banana', 'Kiwi', 'Pineapple', 'Strawberry']
 
