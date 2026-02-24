@@ -4,10 +4,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-model = tf.keras.models.load_model(
-    "fruit_transfer_model.keras",
-    compile=False
-)
+model = tf.keras.models.load_model('fruit_transfer_model.keras')
 
 class_names = ['Apple', 'Banana', 'Kiwi', 'Pineapple', 'Strawberry']
 
