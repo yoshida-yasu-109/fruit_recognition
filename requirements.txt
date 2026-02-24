@@ -1,4 +1,4 @@
 streamlit==1.54.0
-tensorflow-cpu==2.19.0  # メモリ節約のため -cpu 版を推奨
-numpy<2.0.0             # 一旦 1.26.x 系に落として互換性を確保
+tensorflow-cpu==2.15.1
+numpy<2.0.0
 Pillow==11.3.0
