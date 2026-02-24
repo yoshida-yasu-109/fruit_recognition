@@ -43,8 +43,10 @@ elif img_source == "カメラで撮影":
 
 if img_file is not None:
     with st.spinner("推定中..."):
-        img = Image.open(img_file).resize((IMG_SIZE, IMG_SIZE))
+        img = Image.open(img_file).convert("RGB")
+        img = img.resize((IMG_SIZE, IMG_SIZE))
         st.image(img, caption="対象の画像", width="stretch")
+        
         img_array = np.array(img)
         img_array = tf.keras.applications.mobilenet_v2.preprocess_input(img_array)
         img_array = np.expand_dims(img_array, axis=0)
